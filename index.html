@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataFlow Planner | Gestión Ágil de Proyectos de Datos</title>
+  <link rel="stylesheet" href="public/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="brand">⚙️ DataFlow Planner</div>
+      <a href="#app" class="nav-link">Ir a la aplicación</a>
+    </nav>
+    <section class="hero-content">
+      <div>
+        <p class="eyebrow">Aplicación web interactiva</p>
+        <h1>Gestión ágil para proyectos de datos</h1>
+        <p>
+          Organiza tareas, asigna responsables, controla prioridades y visualiza el avance de un proyecto de ingeniería de datos usando HTML, CSS y JavaScript.
+        </p>
+        <a class="primary-button" href="#app">Comenzar ahora</a>
+      </div>
+      <div class="hero-card">
+        <span class="status-dot"></span>
+        <h2>Sprint actual</h2>
+        <p id="heroSummary">0 tareas registradas</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="info-grid">
+      <article>
+        <h3>Objetivo</h3>
+        <p>Simular la administración de un proyecto de datos con tareas, estados, responsables y métricas de avance.</p>
+      </article>
+      <article>
+        <h3>Interactividad</h3>
+        <p>Formulario dinámico, filtros, eliminación de tareas, actualización automática de indicadores y almacenamiento local.</p>
+      </article>
+      <article>
+        <h3>Área relacionada</h3>
+        <p>Ingeniería Informática, Ciencia de Datos e Inteligencia Artificial.</p>
+      </article>
+    </section>
+
+    <section id="app" class="app-section">
+      <div class="section-heading">
+        <p class="eyebrow">Tablero interactivo</p>
+        <h2>Planificador de tareas del proyecto</h2>
+      </div>
+
+      <div class="dashboard">
+        <div class="metric-card">
+          <span>Total</span>
+          <strong id="totalTasks">0</strong>
+        </div>
+        <div class="metric-card">
+          <span>Pendientes</span>
+          <strong id="pendingTasks">0</strong>
+        </div>
+        <div class="metric-card">
+          <span>En proceso</span>
+          <strong id="progressTasks">0</strong>
+        </div>
+        <div class="metric-card success">
+          <span>Finalizadas</span>
+          <strong id="doneTasks">0</strong>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <form id="taskForm" class="task-form">
+          <h3>Nueva tarea</h3>
+          <label>
+            Nombre de la tarea
+            <input id="taskName" type="text" placeholder="Ej: Crear pipeline ETL" required />
+          </label>
+
+          <label>
+            Responsable
+            <input id="taskOwner" type="text" placeholder="Ej: Diego Valencia" required />
+          </label>
+
+          <label>
+            Prioridad
+            <select id="taskPriority" required>
+              <option value="Alta">Alta</option>
+              <option value="Media" selected>Media</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </label>
+
+          <label>
+            Estado
+            <select id="taskStatus" required>
+              <option value="Pendiente">Pendiente</option>
+              <option value="En proceso">En proceso</option>
+              <option value="Finalizada">Finalizada</option>
+            </select>
+          </label>
+
+          <button type="submit">Agregar tarea</button>
+          <button type="button" class="secondary-button" id="loadDemo">Cargar ejemplo</button>
+        </form>
+
+        <section class="task-panel">
+          <div class="panel-header">
+            <h3>Lista de tareas</h3>
+            <select id="filterStatus">
+              <option value="Todas">Todas</option>
+              <option value="Pendiente">Pendiente</option>
+              <option value="En proceso">En proceso</option>
+              <option value="Finalizada">Finalizada</option>
+            </select>
+          </div>
+          <div id="taskList" class="task-list"></div>
+        </section>
+      </div>
+
+      <section class="progress-box">
+        <div>
+          <h3>Avance general</h3>
+          <p id="progressText">Aún no hay tareas finalizadas.</p>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto académico - Tarea 3 Momento 7 | Desarrollo de una Aplicación Web Interactiva</p>
+  </footer>
+
+  <script src="public/script.js"></script>
+</body>
+</html>
